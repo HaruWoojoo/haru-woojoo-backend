@@ -1,3 +1,17 @@
 spring:
   application:
     name: demo
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${rds.hostname}:3306/${rds.db.name}
+    username: ${rds.username}
+    password: ${rds.password}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
